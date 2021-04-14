@@ -1,15 +1,17 @@
 buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.30")
-    }
+//    repositories {
+//        mavenCentral()
+//        mavenLocal()
+//    }
+//    dependencies {
+//        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.0-RC")
+//    }
 }
 
 plugins {
     id("kotlinx.team.infra") version "0.3.0-dev-64"
-    kotlin("plugin.serialization") version "1.4.30"
+    kotlin("multiplatform") version "1.5.0-RC" apply false
+    kotlin("plugin.serialization") version "1.5.0-RC" apply false
 }
 
 infra {
@@ -36,6 +38,7 @@ val JDK_8 by ext(jdkPath(8))
 allprojects {
     repositories {
         mavenCentral()
+        mavenLocal()
     }
 }
 
