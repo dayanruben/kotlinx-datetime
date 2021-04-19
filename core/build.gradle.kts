@@ -23,6 +23,7 @@ val serializationVersion: String by project
 
 kotlin {
     explicitApi()
+    coreLibrariesVersion = "1.5.0-RC"
 
     infra {
         target("linuxX64")
