@@ -10,7 +10,7 @@ buildscript {
 
 plugins {
     id("kotlinx.team.infra") version "0.3.0-dev-64"
-    kotlin("multiplatform") version "1.5.0-RC" apply false
+    kotlin("multiplatform") version "1.5.0-695" apply false
     kotlin("plugin.serialization") version "1.5.0-RC" apply false
 }
 
@@ -38,6 +38,7 @@ val JDK_8 by ext(jdkPath(8))
 allprojects {
     repositories {
         mavenCentral()
+        maven { url = uri("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/dev") }
         mavenLocal()
     }
 }
