@@ -9,9 +9,7 @@ package kotlinx.datetime.test
 import kotlinx.cinterop.*
 import kotlinx.cinterop.ptr
 import kotlinx.datetime.*
-import kotlinx.datetime.LocalDateTime
 import kotlinx.datetime.internal.*
-import kotlinx.datetime.number
 import platform.windows.*
 import kotlin.test.*
 import kotlin.time.Duration.Companion.hours
@@ -32,7 +30,7 @@ class TimeZoneRulesCompleteTest {
 
             dtzi.DynamicDaylightTimeDisabled = 0u
             val (_, tzWithDst) = tzdb.currentSystemDefaultFromDtzi(dtzi)
-            assertTrue(tzWithDst is RegionTimeZone, "Expected RegionTimeZone, got ${tzWithDst::class}")
+            assertTrue(tzWithDst is RuleBasedTimeZone, "Expected RuleBasedTimeZone, got ${tzWithDst::class}")
 
             dtzi.DynamicDaylightTimeDisabled = 1u
             val (_, tzWithoutDst) = tzdb.currentSystemDefaultFromDtzi(dtzi)
